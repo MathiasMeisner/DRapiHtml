@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hallo</h1>
+    <div id="app">
+
+        <button v-on:click="getAllRecords">Get all records</button>
+
+        <table id="recordslist" v-if="record.length" class="table table-striped">
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Year</th>
+            </thead>
+            <tbody>
+                <tr v-for="records in record">
+                    <td>{{records.id}}</td>
+                    <td>{{records.title}}</td>
+                    <td>{{records.artist}}</td>
+                    <td>{{records.duration}}</td>
+                    <td>{{records.yearOfPublication}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="js/index.js"></script>
+</body>
+</html>
